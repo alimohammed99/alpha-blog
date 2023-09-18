@@ -1,24 +1,17 @@
 <template>
     <div class="post">
-    
-    
-    
-        <h3>{{ individualPost.title }}</h3>
-    
-    
-    
-    
-    
-    
-    
+
+        <router-link :to="{ name: 'PostsDetails', params: { yz: individualPost.id } }">
+            <!-- yz is the route parameter sent from the router page -->
+            <h3>{{ individualPost.title }}</h3>
+        </router-link>
+
         <p>{{ snippet }}</p>
-    
-    
-    
-    
-    
-    
-    
+
+        <span v-for="tag in individualPost.tags" :key="tag">
+            #{{ tag }}
+        </span>
+
     </div>
 </template>
 
@@ -49,6 +42,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

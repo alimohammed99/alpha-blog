@@ -1,44 +1,39 @@
 <template>
     <div class="home">
         <h1>HOME</h1>
-    
-        <PostsList v-if="togglePosts" :sendposts="posts" />
-    
-        <button @click="handleTogglePosts">Show/Hide Posts</button>
+        <div v-if="error"> {{ error }} </div>
+        <div v-if="posts.length">
+            <PostsList :sendposts="posts" />
+        </div>
+        <div v-else>
+            LOADING.......
+        </div>
 
-        <button @click="posts.pop()">Delete a Post</button>
+
     </div>
 </template>
 
 <script>
-import { ref } from "vue";
 import PostsList from "../components/PostsList.vue";
+import getPosts from "../composables/getPosts.js";
 
 export default {
     name: "HomeView",
     components: { PostsList },
 
     setup() {
-        const posts = ref([]);
 
-        const error = ref(null);
 
-        const load = async () => {
-            try {
-                let data = await fetch(' http://localhost:3000/posts')
-                if (!data.ok) {
-                    throw Error("No data available")
-                }
-            }
-            catch(err) {
-                error.value = err.message
-                console.warn(err.message)
-            }
-        }
+        // Calling only 'getPosts()' won't work. I have to pass in the data that I need. It might work but it's not gonna return our values.
+
+        const { posts, error, load } = getPosts()
+
+        // Now, the above returns back the values, right from the getPosts.js file. I have to pass them here too since I'll be needing them here.
 
         load()
+        // Calling the load() function to invoke the load() method passed in the getPosts.js
 
-        return { posts };
+        return { posts, error };
     },
 };
 </script>
