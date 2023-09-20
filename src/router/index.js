@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PostsDetails from '../views/PostsDetails.vue'
+import Create from '../views/Create.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     props: true
     // Now the ProjectsDetails page will be able to accept properties from anywhere.
     // This is because I want to send the route parameter(yz i.e id) from the Projects page to this Details page as props.
+  },
+  {
+    path: '/create',
+    name: 'Create',
+    component: Create
   }
 
 ]

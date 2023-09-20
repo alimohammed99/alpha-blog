@@ -4,13 +4,20 @@
         <h3>{{ post.title }}</h3>
         <p class="pre">{{ post.body }}</p>
     </div>
+    <div v-else>
+        <Spinner />
+        <div>LOADING.......</div>
+          <!-- I already have a spinner component. -->
+    </div>
 </template>
 
 <script>
 import getPost from "../composables/getPost.js";
+import Spinner from "../components/Spinner.vue";
 export default {
     props: ['yz'],
     // yz is the route parameter sent from the router page. I need it here as a prop.
+    components: { Spinner },
     setup(props) {
         //This is how we use props in the setup function.
 

@@ -8,6 +8,17 @@ const getPosts = () => {
 
     const load = async () => {
         try {
+
+
+            // I want the page to load the contents after some delay......coz I wanna create a spinner that's gonna load before the page displays.
+            await new Promise(resolve => {
+                setTimeout(resolve, 2000)
+            })
+            // So the above code means: after 2 secs, I'm calling the resolve function.
+            // Although the resolve function isn't doing anything really, it's just holding back TIME somehow.
+            // So, what this whole thing mean is, after calling the laod() function, it's gonna wait 2 secs then do what it's supposed to do, i.e display the data.
+
+            
             let data = await fetch('http://localhost:3000/posts')
             if (!data.ok) {
                 throw Error("No data available!")
