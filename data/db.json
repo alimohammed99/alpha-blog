@@ -1,24 +1,33 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "title": "Welcome to the new Blog",
-            "body": "Lorem ipsum dolor sit met vbnmn ghjikjnhbghj ghjk vhjkj ghjk vbghjk vbhjk vghjk vbghjk bghjk.",
-            "tags": [
-                "webdev",
-                "coding",
-                "news"
-            ]
-        },
-        {
-            "id": 2,
-            "title": "Top 5 CSS Tips",
-            "body": "Lorem ipsum dolor sit met vbnmn ghjikjnhbghj ghjk vhjkj ghjk vbghjk vbhjk vghjk vbghjk bghjk.",
-            "tags": [
-                "css",
-                "coding",
-                "web"
-            ]
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to the new Blog",
+      "body": "Lorem ipsum dolor sit met vbnmn ghjikjnhbghj ghjk vhjkj ghjk vbghjk vbhjk vghjk vbghjk bghjk.",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Top 5 CSS Tips",
+      "body": "Lorem ipsum dolor sit met vbnmn ghjikjnhbghj ghjk vhjkj ghjk vbghjk vbhjk vghjk vbghjk bghjk.",
+      "tags": [
+        "css",
+        "coding",
+        "web"
+      ]
+    },
+    {
+      "title": "qqq",
+      "body": "cvbnhjmk",
+      "tags": [
+        "vbn",
+        "cx"
+      ],
+      "id": 3
+    }
+  ]
 }
