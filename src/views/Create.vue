@@ -25,13 +25,22 @@
 </template>
 
 <script>
+
 import { ref } from 'vue'
+
+import { useRouter } from 'vue-router'
+//  To be able to use router
+// I imported and used the router here coz I wanna use it here. After adding a Blog successfully, I wanna redirect the route to the homepage.
+
 export default {
     setup() {
         const title = ref('')
         const body = ref('')
         const tag = ref('')
         const tags = ref([])
+
+        const router = useRouter()
+        //  To be able to use router
 
         const handleKeyDown = () => {
 
@@ -66,16 +75,17 @@ export default {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(newBlog),
                 })
-                    .then(() => {
-                        // "this.$router" is used to redirect.
-                        this.$router.push("/");
-                        // Pushing another route into the history.
-                        // After adding a Blog, users should be redirected to the homepage('/') to see all Blogs.
-                    })
+
+                // After successfully adding a Blog, redirect us to the Homepage.
+                router.push({ name: 'home' })
+
+                // Check for errors
                 if (!data.ok) {
                     throw Error("Unable to add Blog, try again!")
                 }
             }
+
+            // If there's error, catch it and log it into the console.
             catch (err) {
                 error.value = err.message
                 console.warn(error.value)

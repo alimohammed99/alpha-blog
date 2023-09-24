@@ -1,3 +1,5 @@
+// PostsDetails owns the getPost under composables.
+
 import { ref } from "vue";
 // I imported this coz I wanna use 'ref' here.
 
@@ -11,7 +13,6 @@ const getPost = (yz) => {
 
     const load = async () => {
         try {
-
             // I want the page to load the contents after some delay......coz I wanna create a spinner that's gonna load before the page displays.
             await new Promise(resolve => {
                 setTimeout(resolve, 2000)

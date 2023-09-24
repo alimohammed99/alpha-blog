@@ -20,7 +20,6 @@ export default {
         console.log(props.sendposts)
     }
 
-
 };
 </script>
 

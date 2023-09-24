@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PostsDetails from '../views/PostsDetails.vue'
 import Create from '../views/Create.vue'
+import Tag from '../views/Tag.vue'
 
 const routes = [
   {
@@ -24,7 +25,15 @@ const routes = [
     path: '/create',
     name: 'Create',
     component: Create
-  }
+  },
+  {
+    // Creating a tag route. So each Post tag is gonna be a link
+    path: '/tags/:uv+',
+    // 'uv' is gonna be like an ID, that stands for each tag clicked, uniquely.
+    name: 'tags',
+    component: Tag,
+    props: true
+  },
 
 ]
 

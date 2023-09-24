@@ -11,7 +11,6 @@
             <!-- I already have a spinner component. -->
         </div>
 
-
     </div>
 </template>
 

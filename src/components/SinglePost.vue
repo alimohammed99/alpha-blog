@@ -8,9 +8,13 @@
 
         <p>{{ snippet }}</p>
 
+
         <span v-for="tag in individualPost.tags" :key="tag">
-            #{{ tag }}
+            <router-link :to="{ name: 'tags', params: { uv: tag } }">
+                #{{ tag }}
+            </router-link>
         </span>
+
 
     </div>
 </template>
@@ -43,12 +47,12 @@ export default {
 </script>
 
 <style>
-
 .post {
     margin: 0 40px 30px;
     padding-bottom: 30px;
     border-bottom: 1px dashed #e7e7e7;
 }
+
 .post h3 {
     display: inline-block;
     position: relative;
@@ -57,6 +61,7 @@ export default {
     margin-bottom: 10px;
     max-width: 400px;
 }
+
 .post h3::before {
     content: "";
     display: block;
@@ -69,5 +74,4 @@ export default {
     left: -30px;
     transform: rotatez(-1deg);
 }
-
 </style>
