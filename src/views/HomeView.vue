@@ -2,8 +2,11 @@
     <div class="home">
         <h1>HOME</h1>
         <div v-if="error"> {{ error }} </div>
-        <div v-if="posts.length">
+        <div class="layout" v-if="posts.length">
             <PostsList :sendposts="posts" />
+            <TagCloud :tagCloudPosts="posts" />
+            <!-- This TagCloud is in another component, under composables. I'm nesting it here. I'm gonna need access to our posts in that composable so I have to send the posts there.-->
+            <!-- Even though my business is with the tags, I still need to have access to the posts because "POSTS HAve the TAGS." -->
         </div>
         <div v-else>
             <Spinner />
@@ -16,12 +19,13 @@
 
 <script>
 import PostsList from "../components/PostsList.vue";
+import TagCloud from "../components/TagCloud.vue";
 import getPosts from "../composables/getPosts.js";
 import Spinner from "../components/Spinner.vue";
 
 export default {
     name: "HomeView",
-    components: { PostsList, Spinner },
+    components: { PostsList, Spinner, TagCloud },
 
     setup() {
 
@@ -46,5 +50,10 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
+}
+.layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20
 }
 </style>

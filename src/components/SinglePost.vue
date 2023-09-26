@@ -10,7 +10,8 @@
 
 
         <span v-for="tag in individualPost.tags" :key="tag">
-            <router-link :to="{ name: 'tags', params: { uv: tag } }">
+            <router-link :to="{ name: 'Tag', params: { uv: tag } }">
+                <!-- Remember I now have access to each of the tags using 'tag', from the for-loop. SO the route parameter is gonna be tag. -->
                 #{{ tag }}
             </router-link>
         </span>

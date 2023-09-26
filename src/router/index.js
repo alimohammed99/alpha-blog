@@ -28,9 +28,9 @@ const routes = [
   },
   {
     // Creating a tag route. So each Post tag is gonna be a link
-    path: '/tags/:uv+',
+    path: '/tags/:uv',
     // 'uv' is gonna be like an ID, that stands for each tag clicked, uniquely.
-    name: 'tags',
+    name: 'Tag',
     component: Tag,
     props: true
   },
