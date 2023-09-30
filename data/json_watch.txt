@@ -1,1 +1,3 @@
 npx json-server --watch data/db.json 
+
+npm install json-server
